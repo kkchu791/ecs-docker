@@ -1,0 +1,21 @@
+name: ga demo
+run-name: ${{github.actor }} is gonna learn about ga
+on: [push]
+jobs:
+  explore-ga:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "sup"
+      - run: echo "yo this was triggered by ${{github.event_name}} "
+      - run: echo "the runner is running this on ${{ runner.os }} "
+      - run: echo "you're on repo $ {{github.repository }}"
+      - name: cloning repo onto the runner's vm workspace folder
+      - uses: actions/checkout@v7
+      - run: echo "The ${{ github.repository }} repo has been cloned to the runner"
+      - name: List file in the repo
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "This jobs status is ${{ job.status }}. "
+      
+
+
