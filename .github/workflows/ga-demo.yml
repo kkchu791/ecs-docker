@@ -1,5 +1,5 @@
 name: ga demo
-run-name: ${{github.actor }} is gonna learn about ga
+run-name: ${{ github.actor }} is gonna learn about ga
 on: [push]
 jobs:
   explore-ga:
@@ -10,7 +10,7 @@ jobs:
       - run: echo "the runner is running this on ${{ runner.os }} "
       - run: echo "you're on repo $ {{github.repository }}"
       - name: cloning repo onto the runner's vm workspace folder
-      - uses: actions/checkout@v7
+        uses: actions/checkout@v7
       - run: echo "The ${{ github.repository }} repo has been cloned to the runner"
       - name: List file in the repo
         run: |
