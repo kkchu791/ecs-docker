@@ -8,6 +8,6 @@ jobs:
       - name: cloning repo onto the runner's vm workspace folder
         uses: actions/checkout@v7
       - run: docker build -t dk .
-      - run: docker run --detach --name dk-container --publish 8080:80 dk 
-      - run: sleep 3 && curl --fail http://localhost:8080
+      - run: docker run --detach --name dk-container --publish 8080:90 dk 
+      - run: sleep 3 && curl --fail http://localhost:8080/hello
   
